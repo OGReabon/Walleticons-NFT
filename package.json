@@ -4,11 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Filip Faltejsek <filip.m.faltejsek@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "jimp": "^0.16.1"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }

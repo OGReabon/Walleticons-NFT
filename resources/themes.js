@@ -1,4 +1,4 @@
-const basicColors = {
+export const basicColors = {
   blue: "#1746dc",
   gren: "#2eaa2a",
   yellow: "#D3f106",
@@ -6,7 +6,7 @@ const basicColors = {
   red: "#F10606",
 };
 
-const specialColors = {
+export const specialColors = {
   dragonBlood: "#b84048",
   brazilwood: "#95562A",
   cadmiumYellow: "#fff600",
@@ -21,9 +21,4 @@ const specialColors = {
   ntpYellow: "#43260",
   yinmnBlue: "#2e5090",
   vantaBlack: "##000100",
-};
-
-export default {
-  basicColors,
-  specialColors,
 };
