@@ -2,13 +2,16 @@
 // TODO: parse body into binary object ✅
 // TODO: create image from binary object
 
-const alignTo2Bytes = (byte) => {
-  let twoBytes = [];
-  while (byte.length < 16) {
-    byte.unshift('0')
+const alignToByte = (byte) => {
+  let newByte = [];
+  // * There is no need to parse for 2 bytes as all characters from
+  // * ETH wallet addresses are just lowercase and uppercase letters
+  // * and numbers
+    while (byte.length < 8) {
+      byte.unshift('0')
   }
-  byte.forEach((bit) => twoBytes.push(parseInt(bit,10)));
-  return twoBytes
+  byte.forEach((bit) => newByte.push(parseInt(bit,10)));
+  return newByte
 }
 
 export const parseIntoBits = (wallet) => {
@@ -16,7 +19,7 @@ export const parseIntoBits = (wallet) => {
   let bits = [];
   wallet = wallet.split("")
   wallet.forEach((char) => matrix.push(char.charCodeAt(0).toString(2).split(""))); // * generates byte code from wallet address
-  matrix.forEach((byte) => bits.push(alignTo2Bytes(byte)))
+  matrix.forEach((byte) => bits.push(alignToByte(byte)))
   return bits;
 };
 
