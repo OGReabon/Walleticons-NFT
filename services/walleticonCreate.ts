@@ -2,21 +2,21 @@
 // TODO: parse body into binary object ✅
 // TODO: create image from binary object
 
-const align2Bytes = (byte) => {
+const alignTo2Bytes = (byte) => {
   let twoBytes = [];
   while (byte.length < 16) {
     byte.unshift('0')
   }
-  byte.forEach((bit) => twoBytes.push(bit.parseInt()));
-  
+  byte.forEach((bit) => twoBytes.push(parseInt(bit,10)));
+  return twoBytes
 }
 
 export const parseIntoBits = (wallet) => {
   let matrix = [];
   let bits = [];
   wallet = wallet.split("")
-  wallet.forEach((char) => matrix.push(char.charCodeAt(0).toString(2).split(""))); // * generates bit code from wallet address
-  matrix.forEach((byte) => bits.push(align2Bytes(byte)))
+  wallet.forEach((char) => matrix.push(char.charCodeAt(0).toString(2).split(""))); // * generates byte code from wallet address
+  matrix.forEach((byte) => bits.push(alignTo2Bytes(byte)))
   return bits;
 };
 
