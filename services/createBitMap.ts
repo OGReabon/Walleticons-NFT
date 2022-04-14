@@ -10,7 +10,7 @@ const alignToByte = (byte) => {
   return newByte
 }
 
-export const parseIntobytes = (wallet) => {
+export const parseIntoBytes = (wallet) => {
   let matrix = [];
   let bytes = [];
   wallet = wallet.split("")
